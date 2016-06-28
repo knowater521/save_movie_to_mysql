@@ -9,7 +9,6 @@ sys.setdefaultencoding('utf8')
 
 
 tags = get_tags() #获取电影标签
-# dirs = 'E:\\douban_movie\\'
 if tags:
     # build_excel(dirs, tags) #根据标签建立相应的Excel文件
     get_info(tags)#获取评分>7 并且人数>2w的电影信息，并保存到Excel
