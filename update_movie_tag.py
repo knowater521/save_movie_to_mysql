@@ -26,7 +26,6 @@ def update_movie_tag(movie_name, tag):
         tags = [result, tag]
         link = '|'
         new_tag = link.join(tags)
-        print(new_tag)
         sql = 'update movie_info set movie_type="%s" where movie_name="%s"' % (new_tag, movie_name)
         cur.execute(sql)
         conn.cursor().close()
