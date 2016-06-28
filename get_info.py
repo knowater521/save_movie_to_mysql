@@ -69,7 +69,7 @@ def get_info(tags):
                                     update_movie_tag(movie_name[0], tag)
                                 else:
                                     print('数据库不存在%s，存入数据库' % movie_name[0])
-                                    save_to_mysql(tag, movie_name[0], rate[0], people_num[0])
+                                    save_to_mysql(tag, movie_name[0], rate[0], people_num[0], movie_url[0])
                             else:
                                 print('%s 不符合标准,不保存' % movie_name[0])
 
