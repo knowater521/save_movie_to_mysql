@@ -62,16 +62,16 @@ def get_info(tags):
                         # movie_region = html_content2.xpath(movie_region_path)
                         # 如果评论人数大于2w,评分大于7 则保存到数据库中
                         if movie_name and rate and people_num:  # list不为空
-                            print('判断电影%s是否符合标准' % movie_name[0])
+                            print('判断电影：%s 是否符合标准' % movie_name[0])
                             if int(people_num[0]) > 20000 and float(rate[0]) > 7:
                                 if movie_is_exist(movie_name[0]):#判断在数据库里是否存在这个电影，如果存在，则更新电影类型，用|分隔
-                                    print('数据库存在%s这部电影，更新数据库内的电影类型' % movie_name[0])
+                                    print('数据库存在%s，更新数据库内的电影类型' % movie_name[0])
                                     update_movie_tag(movie_name[0], tag)
                                 else:
-                                    print('数据库不存在%s这部电影，存入数据库' % movie_name[0])
+                                    print('数据库不存在%s，存入数据库' % movie_name[0])
                                     save_to_mysql(tag, movie_name[0], rate[0], people_num[0])
                             else:
-                                print('电影%s不符合标准,不保存' % movie_name[0])
+                                print('%s 不符合标准,不保存' % movie_name[0])
 
                         else:
                             print("not found the infomation")

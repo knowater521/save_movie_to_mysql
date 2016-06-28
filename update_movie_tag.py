@@ -1,4 +1,4 @@
-# -*- coding:utf-8 -*-
+# -*- coding: utf-8 -*-
 import MySQLdb
 from globe_var import *
 import sys
@@ -22,7 +22,7 @@ def update_movie_tag(movie_name, tag):
         conn.close()
         return True
     else:
-        print('不存在这个类型，将存入数据库，类型用'|'分隔')
+        print('不存在这个类型，将存入数据库，类型用"|"分隔')
         tags = [result, tag]
         link = '|'
         new_tag = link.join(tags)
