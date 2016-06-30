@@ -23,18 +23,19 @@ def get_tags():
             content = response.read().decode('utf-8')
             html_content = etree.HTML(content)
 
-            for i in range(1, 9):
-                for j in range(1, 4):
+            for i in range(1, 10):
+                for j in range(1, 5):
                     tag_path = '//*[@id="content"]/div/div[1]/table[1]/tbody/tr['+str(i)+']/td['+str(j)+']/a/text()'
                     tag = html_content.xpath(tag_path)
                     tags.append(tag[0])
             print("tag has got")
             return tags
-
     except urllib2.HTTPError, e:
             print e.code
     except urllib2.URLError, e:
             print e.reason
+
+
 
 
 
